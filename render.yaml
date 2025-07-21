@@ -4,12 +4,11 @@ services:
     env: node
     buildCommand: cd server && npm install
     startCommand: cd server && npm start
-    plan: free
     envVars:
       - key: NODE_ENV
         value: production
       - key: PORT
-        value: 10000  # Optional, Render assigns one automatically if omitted
+        value: 10000
       - key: DB_HOST
         value: your-mysql-host-url
       - key: DB_USER
@@ -24,4 +23,3 @@ services:
     env: static
     buildCommand: cd client && npm install && npm run build
     staticPublishPath: client/build
-    plan: free
